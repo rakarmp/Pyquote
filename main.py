@@ -30,6 +30,14 @@ class Quote(BaseModel):
     text: str
     author: str
 
+@app.get("/")
+def get_info():
+    return {
+        "info": "Pyquote by rakarmp (Zyarexx)",
+        "message_author": "Make sure you don't forget to change the url to connect to the mongodb database, Happy to use!",
+        "message": "to use pyquote please go to /docs"
+        }
+
 @app.get("/quotes", response_model=List[Quote])
 def get_quotes():
     quotes = list(collection.find())
