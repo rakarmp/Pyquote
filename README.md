@@ -1,5 +1,5 @@
-<img src="pyquote.png" alt="pyquote"/>
 <p align="center">
+<img src="pyquote.png" alt="pyquote"/>
 <a href="https://mongodb.com" target="_blank">
 <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
 </a>
