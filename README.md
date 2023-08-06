@@ -1,24 +1,32 @@
 <img src="pyquote.png" alt="pyquote"/>
+<p align="center">
+<a href="https://mongodb.com" target="_blank">
+<img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
+</a>
+<a href="https://fastapi.tiangolo.com/" target="_blank">
+<img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI"/>
+</a>
+</p>
 
 # Pyquote
 
-REST API Pyquote adalah sebuah Rest API (Application Programming Interface) web yang menyediakan layanan untuk mengelola dan mengakses kumpulan quote. Rest API ini dibangun menggunakan Python FastAPI dan terhubung dengan MongoDB sebagai database.
+REST API Pyquote adalah sebuah Rest API (Application Programming Interface) web yang menyediakan layanan untuk mengelola dan mengakses kumpulan quote. Rest API ini dibangun menggunakan Python [FastAPI](https://fastapi.tiangolo.com) dan terhubung dengan [MongoDB](https://www.mongodb.com) sebagai database.
 
 ## Endpoint yang Tersedia
 
--   GET /quotes: Mengembalikan daftar quote dalam bentuk JSON.
--   GET /quotes/{quote_id}: Mengembalikan quote dengan ID yang sesuai dalam bentuk JSON.
--   POST /quotes: Membuat quote baru dan menyimpannya ke dalam koleksi  quotes.
--   PUT /quotes/{quote_id}: Memperbarui quote dengan ID tertentu dalam koleksi  quotes.
--   DELETE /quotes/{quote_id}: Menghapus quote dengan ID tertentu dari koleksi  quotes.
+- GET /quotes: Mengembalikan daftar quote dalam bentuk JSON.
+- GET /quotes/{quote_id}: Mengembalikan quote dengan ID yang sesuai dalam bentuk JSON.
+- POST /quotes: Membuat quote baru dan menyimpannya ke dalam koleksi quotes.
+- PUT /quotes/{quote_id}: Memperbarui quote dengan ID tertentu dalam koleksi quotes.
+- DELETE /quotes/{quote_id}: Menghapus quote dengan ID tertentu dari koleksi quotes.
 
 ## Format Data Quote
 
 Setiap quote memiliki atribut berikut:
 
--   id: ID unik untuk quote.
--   text: Teks dari quote.
--   author: Penulis atau sumber dari quote.
+- id: ID unik untuk quote.
+- text: Teks dari quote.
+- author: Penulis atau sumber dari quote.
 
 ## Penggunaan
 
