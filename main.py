@@ -3,25 +3,21 @@ from pydantic import BaseModel
 from pymongo import MongoClient
 from typing import List
 from fastapi.middleware.cors import CORSMiddleware
+import random
 
 app = FastAPI()
 
-# Konfigurasi CORS
-origins = [
-    "http://localhost:8000",
-    "http://localhost:8000/quotes"
-]
-
+# KOnfigurasi cors
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"], # Mengizinkan semua origins
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["*"]
 )
 
 # Koneksi ke MongoDB
-client = MongoClient("YOUR MONGODB URL")
+client = MongoClient("ISI DENGAN URL MONGODB")
 db = client["quote_db"]
 collection = db["quotes"]
 
@@ -42,6 +38,14 @@ def get_info():
 def get_quotes():
     quotes = list(collection.find())
     return quotes
+
+@app.get("/quotes/random", response_model=Quote)
+def get_random_quote():
+    quotes = list(collection.find())
+    if quotes:
+        random_quote = random.choice(quotes)
+        return random_quote
+    return {"error": "Quote Not Found"}
 
 @app.get("/quotes/{quote_id}", response_model=Quote)
 def get_quote(quote_id: str):
